@@ -7,9 +7,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MenuComponent implements OnInit {
 
+  pagesSwitch:number = 1;
+
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  switchToMain():void {
+    this.pagesSwitch = 1;
+  }
+  switchToBooks():void {
+    this.pagesSwitch = 2;
+  }
+  switchToRandom():void {
+    this.pagesSwitch = 3;
+  }
+  switchToAccount():void {
+    this.pagesSwitch = 4;
+  }
 }

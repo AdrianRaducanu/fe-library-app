@@ -1,6 +1,23 @@
-<div class = "menu-main-div">
-  <h4>PAGINA PRINCIPALA</h4>
-  <h4>CARTI</h4>
-  <h4>RECOMANDAREA NOASTRA</h4>
-  <h4>CONTUL TAU</h4>
+<div class="menu-container">
+  <div class = "menu-main-div">
+    <div class = "menu-titles-div menu-main-page-div" (click)="switchToMain()">
+      <h4>PAGINA PRINCIPALA</h4>
+    </div>
+    <div class = "menu-titles-div menu-books-div" (click)="switchToBooks()">
+      <h4>CARTI</h4>
+    </div>
+    <div class = "menu-titles-div menu-random-div" (click)="switchToRandom()">
+      <h4>RECOMANDAREA NOASTRA</h4>
+    </div>
+    <div class = "menu-titles-div menu-account-div" (click)="switchToAccount()">
+      <h4>CONTUL TAU</h4>
+    </div>
+  </div>
+  <div class = "menu-pages-div" [ngSwitch]="pagesSwitch">
+    <app-main-page *ngSwitchCase="1"></app-main-page>
+    <app-books-page *ngSwitchCase="2"></app-books-page>
+    <app-random-page *ngSwitchCase="3"></app-random-page>
+    <app-account-page *ngSwitchCase="4"></app-account-page>
+  </div>
 </div>
+
