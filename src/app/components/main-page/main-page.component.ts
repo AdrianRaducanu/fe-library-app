@@ -7,9 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MainPageComponent implements OnInit {
 
+  toggleVar:boolean = true;
+
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  toggle():void{
+    this.toggleVar = !this.toggleVar;
+  }
 }
