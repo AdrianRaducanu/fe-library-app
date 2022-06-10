@@ -3,23 +3,42 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background: lightpink;
   padding-top: 5rem;
+  height: 105.7%;
+  padding-bottom: 5rem;
+  background-image:
+    linear-gradient(90deg, rgba(65,59,136,0.41358550256039917) 23%, rgba(255,255,255,0) 100%),
+    url("/assets/svg/undraw_exams_re_4ios.svg");
+  background-repeat: no-repeat;
+  background-position: right center;
+  background-size: contain;
 
   .about-random{
-    height: 20rem;
-    background: honeydew;
+    height: 25rem;
+    background: #ffffff;
     padding: 2rem 5rem;
     width: 40%;
-    border-radius: 5px;
+    border-radius: 15px;
     margin-bottom: 10rem;
     display: flex;
     flex-direction: column;
+    justify-content: space-around;
 
     .about-button{
       display: flex;
       align-items: center;
       justify-content: center;
+
+      button{
+        margin-bottom: 1rem;
+        padding:10px 30px;
+        background: #413B88;
+        color: #F6F6F6;
+        font-weight: lighter;
+        outline: none;
+        border-radius: 10px;
+        border: none;
+      }
 
     }
   }

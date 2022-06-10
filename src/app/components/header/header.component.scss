@@ -5,14 +5,31 @@
   align-items: center;
   padding: 0 6rem;
   height: 8rem;
-  background: #413B88;
 }
-.header-div{
-  background: #F4E7DE;
+.logo-div{
+  padding: 0.6rem;
+  border-radius: 50%;
+  border: 1.5px solid #363636;
+  i{
+    font-size: 2rem;
+    color: #363636;
+  }
 }
 .input-div{
   width: 40rem;
   input{
     border-radius: 3px;
   }
+}
+.user-div{
+  padding: 0.6rem;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  i{
+    font-size: 2rem;
+    color: #363636;
+    margin: 1rem;
+  }
+
 }

@@ -1,31 +1,51 @@
 .books-container{
   display: flex;
   height: 100%;
+  background-image:
+    linear-gradient(90deg, rgba(244,231,222,0) 0%, rgba(255,255,255,1) 45%),
+    url("/assets/svg/undraw_book_reading_re_fu2c.svg");
+  background-repeat: no-repeat;
 
   overflow: hidden;
   .filters{
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
-    background: beige;
+    align-items: flex-end;
+    justify-content: space-evenly;
     height: 100%;
-    width: 25%;
-    padding-left: 19rem;
+    width: 20%;
+    margin-left: 10rem;
     .search-button{
-      background: #413B88;
       height: 2rem;
       display: flex;
+      flex-direction: column;
       align-items: center;
       justify-content: center;
-      margin-bottom: 5rem;
+      margin-bottom: 3rem;
+      button{
+        margin-bottom: 1rem;
+        padding:5px 15px;
+        background: #413B88;
+        color: #F6F6F6;
+        font-weight: lighter;
+        outline: none;
+        border-radius: 10px;
+        border: none;
+      }
+      #button-delete{
+        background: #ef7a83;
+      }
     }
     .one-filter{
       display: flex;
       flex-direction: column;
-      padding: 4rem 4rem 0 4rem;
+      padding: 0 4rem 0 4rem;
 
       .filter-title{
         padding-bottom: 1rem;
+        color: #413B88;
+        font-weight: bold;
+        font-size: 18px;
       }
       form{
         display: flex;
@@ -35,13 +55,12 @@
   }
 
   .books-table{
-    width: 75%;
+
+    width: 80%;
     height: 65rem;
-    background: #413B88;
     overflow: hidden;
     .ul-books{
       overflow: scroll;
-      background: indianred;
       display: flex;
       flex-wrap: wrap;
       flex-direction: row;

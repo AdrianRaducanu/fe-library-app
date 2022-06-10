@@ -1,14 +1,16 @@
 @import '~bootstrap/dist/css/bootstrap.min.css';
-
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,200;0,300;0,400;1,200;1,300;1,400&display=swap');
 *{
   margin: 0;
   padding: 0;
+  font-family: 'Nunito Sans', sans-serif;
 }
-body {
-  font-family: "Varela Round", sans-serif;
-}
+
 $whitish : #F6F6F6;
 $purplish : #413B88;
 $yellowish : #F4E7DE;
-$blackish : #252525;
+$blackish : #363636;
 $greyish : #D7D9DC;
+
+// background: rgb(65,59,136);
+//background: linear-gradient(90deg, rgba(65,59,136,0.41358550256039917) 23%, rgba(255,255,255,0) 100%);

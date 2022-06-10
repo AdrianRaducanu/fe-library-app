@@ -1,10 +1,9 @@
 .main-page-container{
   height: 100%;
-  background: aliceblue;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-around;
+  justify-content: center;
 }
 .just-story{
   display: flex;
@@ -16,47 +15,85 @@
     width: 70rem;
   }
 }
+
 .story-div{
   height: 30%;
   display: flex;
   flex-direction: column;
   border-radius: 0.5rem;
-  background: darkgoldenrod;
+  background: #F4E7DE;
   width: 80rem;
 
   .story-hidden{
     padding: 10rem 5rem ;
-    background: darkcyan;
   }
   .story-unhidden{
     display: flex;
     justify-content: space-between;
-    background: cornsilk;
     height: 100%;
 
     .story-text{
       padding: 3rem 5rem;
-      background: #413B88;
       display: flex;
       flex-direction: column;
-      justify-content: space-around;
+      justify-content: space-evenly;
       align-items: flex-start;
+
+      h4{
+        font-weight: bold;
+        color: #413B88;
+        font-size: 2rem;
+      }
+      h5{
+        font-weight: lighter;
+        color: #9b897f;
+      }
+      button{
+        background: #baa599;
+        outline: none;
+        border: none;
+        padding: 5px 15px;
+        border-radius: 3px;
+        color: #fdfaf7;
+      }
     }
     .story-image{
-
+      overflow: hidden;
+      img{
+        padding-top: 3rem;
+        padding-right: 2rem;
+        rotate: -5deg;
+      }
     }
   }
 }
+.story-with-txt{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  border-radius: 3px;
 
+}
+.description-div{
+  height: 100%;
+  background: linear-gradient(180deg, rgba(244,231,222,1) 0%, rgba(255,255,255,1) 30%);
+  color: #9b897f;
+  padding: 5rem 40rem;
+}
 .top-5-books-container{
-  background: indianred;
-  width: 70%;
-  height: 30rem;
+  padding-top: 5rem;
+  width: 60%;
+  height: 100%;
   .top-5-books-text{
     margin-bottom: 5rem;
     display: flex;
     align-items: center;
     justify-content: center;
+    h4{
+      font-size: 2rem;
+      color: #363636;
+    }
   }
   .top-5-books-list{
     display: flex;

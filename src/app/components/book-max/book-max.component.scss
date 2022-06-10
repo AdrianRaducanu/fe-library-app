@@ -2,21 +2,48 @@
   display: flex;
   flex-direction: row;
   justify-content: center;
-  background: honeydew;
   padding: 0 24rem;
   height: 25rem;
 
   .book-max-img{
-    background: #413B88;
-    width: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 15rem;
+
+    img{
+      flex-shrink: 0;
+      min-width: 100%;
+      min-height: 100%;
+      border-radius: 15px 0 0 15px;
+    }
   }
   .book-max-txt{
-    background: indianred;
-    width: 60%;
+    width: 55%;
     padding: 1rem 2rem;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
+    background: #ffffff;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    border-radius: 0px 15px 15px 0px;
+    i{
+      color: #FFCB77;
+    }
+  }
+}
 
+#description-book-max{
+  font-style: italic;
+}
+
+.book-reserve{
+  button{
+    background: white;
+    outline: none;
+    padding: 5px 15px;
+    border-radius: 3px;
+    color: #363636;
+    border: 1px solid #363636;
   }
 }
