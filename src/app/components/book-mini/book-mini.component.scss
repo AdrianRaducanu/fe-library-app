@@ -1,0 +1,21 @@
+.mini-book-container{
+  height: 22rem;
+  width: 15rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-around;
+  background: maroon;
+}
+.book-img{
+  background: cadetblue;
+}
+.book-txt{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  background: #F6F6F6;
+}
+.book-star{
+  display: flex;
+}

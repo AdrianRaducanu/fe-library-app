@@ -2,15 +2,19 @@
   <div class = "menu-main-div">
     <div class = "menu-titles-div menu-main-page-div" (click)="switchToMain()">
       <h4>PAGINA PRINCIPALA</h4>
+      <div class="dash" [ngClass]="pagesSwitch===1 ? 'dash-visible' : 'dash-invisible'"></div>
     </div>
     <div class = "menu-titles-div menu-books-div" (click)="switchToBooks()">
       <h4>CARTI</h4>
+      <div class="dash" [ngClass]="pagesSwitch===2 ? 'dash-visible' : 'dash-invisible'"></div>
     </div>
     <div class = "menu-titles-div menu-random-div" (click)="switchToRandom()">
       <h4>RECOMANDAREA NOASTRA</h4>
+      <div class="dash" [ngClass]="pagesSwitch===3 ? 'dash-visible' : 'dash-invisible'"></div>
     </div>
     <div class = "menu-titles-div menu-account-div" (click)="switchToAccount()">
       <h4>CONTUL TAU</h4>
+      <div class="dash" [ngClass]="pagesSwitch===4 ? 'dash-visible' : 'dash-invisible'"></div>
     </div>
   </div>
   <div class = "menu-pages-div" [ngSwitch]="pagesSwitch">

@@ -7,9 +7,24 @@
   height: 5rem;
   .menu-titles-div{
     cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 }
 .menu-pages-div{
   height: 65rem;
   background: aquamarine;
+}
+
+.dash{
+  height: 0.1rem;
+  width: 0.5rem;
+  position: center;
+}
+.dash-visible{
+  background: #252525;
+}
+.dash-invisible{
+  background: transparent;
 }
