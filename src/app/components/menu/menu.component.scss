@@ -18,8 +18,9 @@
 }
 
 .dash{
-  height: 0.1rem;
-  width: 0.5rem;
+  height: 0.3rem;
+  width: 0.3rem;
+  border-radius: 2rem;
   position: center;
 }
 .dash-visible{
@@ -27,4 +28,10 @@
 }
 .dash-invisible{
   background: transparent;
+}
+.title-bold{
+  color: #252525;
+}
+.title-normal{
+  color: #D7D9DC;
 }

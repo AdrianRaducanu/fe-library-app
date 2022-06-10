@@ -1,0 +1,59 @@
+.books-container{
+  display: flex;
+  height: 100%;
+
+  overflow: hidden;
+  .filters{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    background: beige;
+    height: 100%;
+    width: 25%;
+    padding-left: 19rem;
+    .search-button{
+      background: #413B88;
+      height: 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 5rem;
+    }
+    .one-filter{
+      display: flex;
+      flex-direction: column;
+      padding: 4rem 4rem 0 4rem;
+
+      .filter-title{
+        padding-bottom: 1rem;
+      }
+      form{
+        display: flex;
+        flex-direction: column;
+      }
+    }
+  }
+
+  .books-table{
+    width: 75%;
+    height: 65rem;
+    background: #413B88;
+    overflow: hidden;
+    .ul-books{
+      overflow: scroll;
+      background: indianred;
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: row;
+      align-items: flex-start;
+      height: 100%;
+      width: 100%;
+      padding-right: 19rem;
+      justify-content: space-around;
+      list-style-type: none;
+      li{
+        margin: 2rem;
+      }
+    }
+  }
+}
