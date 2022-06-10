@@ -1,0 +1,22 @@
+.book-max-container{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  background: honeydew;
+  padding: 0 24rem;
+  height: 25rem;
+
+  .book-max-img{
+    background: #413B88;
+    width: 20%;
+  }
+  .book-max-txt{
+    background: indianred;
+    width: 60%;
+    padding: 1rem 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+
+  }
+}

@@ -1,0 +1,26 @@
+.random-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: lightpink;
+  padding-top: 5rem;
+
+  .about-random{
+    height: 20rem;
+    background: honeydew;
+    padding: 2rem 5rem;
+    width: 40%;
+    border-radius: 5px;
+    margin-bottom: 10rem;
+    display: flex;
+    flex-direction: column;
+
+    .about-button{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+    }
+  }
+}

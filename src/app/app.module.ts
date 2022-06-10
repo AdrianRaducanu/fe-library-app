@@ -10,6 +10,7 @@ import { BooksPageComponent } from './components/books-page/books-page.component
 import { RandomPageComponent } from './components/random-page/random-page.component';
 import { AccountPageComponent } from './components/account-page/account-page.component';
 import { BookMiniComponent } from './components/book-mini/book-mini.component';
+import { BookMaxComponent } from './components/book-max/book-max.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { BookMiniComponent } from './components/book-mini/book-mini.component';
     BooksPageComponent,
     RandomPageComponent,
     AccountPageComponent,
-    BookMiniComponent
+    BookMiniComponent,
+    BookMaxComponent
   ],
   imports: [
     BrowserModule,
