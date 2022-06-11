@@ -1,0 +1,71 @@
+.account-container{
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-top: 3rem;
+  background: rgba(239, 122, 131, 0.32);
+  background-image:
+    linear-gradient(0deg, rgba(255,255,255,1) 45%, rgba(255,255,255,0.1) 100%),
+    url("/assets/svg/undraw_lost_online_re_upmy.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: 0, left, right;
+
+  .account-txt-btn{
+    background: #ffffff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 30%;
+    padding: 2rem 5rem;
+    border-radius: 15px;
+
+    .account-text{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .account-button{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      button{
+        margin-bottom: 1rem;
+        padding:5px 15px;
+        background: #ef7a83;
+        color: #F6F6F6;
+        font-weight: lighter;
+        outline: none;
+        border-radius: 10px;
+        border: none;
+        font-size: large;
+      }
+    }
+  }
+}
+.last-books-container{
+  padding-top: 5rem;
+  width: 60%;
+  height: 100%;
+  overflow: hidden;
+  .last-books-text{
+    margin-bottom: 5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    h4{
+      font-size: 2rem;
+      color: #363636;
+    }
+  }
+  .last-books-list{
+    overflow: scroll;
+    display: flex;
+    flex-direction: row;
+
+
+  }
+}

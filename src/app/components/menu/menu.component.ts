@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MenuComponent implements OnInit {
 
-  pagesSwitch:number = 3;
+  pagesSwitch:number = 1;
 
   constructor() { }
 

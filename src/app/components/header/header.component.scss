@@ -16,10 +16,21 @@
   }
 }
 .input-div{
+
   width: 40rem;
-  input{
+  form{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    .fa-search{
+      font-size: 1.5rem;
+      margin-left: 1rem;
+    }
+    input{
     border-radius: 3px;
+    }
   }
+
 }
 .user-div{
   padding: 0.6rem;
