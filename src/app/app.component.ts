@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import {BookServiceService} from "./services/book-service.service";
+import {UsersServiceService} from "./services/users-service.service";
 
 @Component({
   selector: 'app-root',
@@ -9,8 +10,8 @@ import {BookServiceService} from "./services/book-service.service";
 export class AppComponent {
   title = 'user-app';
 
-  constructor(private bookService: BookServiceService) {
-    this.bookService.getAllBooks().subscribe( data => {
+  constructor(private bookService: BookServiceService, private usersService: UsersServiceService) {
+    this.usersService.getAllUsers().subscribe( data => {
       console.log(data);
     })
   }
