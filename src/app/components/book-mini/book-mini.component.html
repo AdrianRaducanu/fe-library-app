@@ -1,11 +1,11 @@
 <div class="mini-book-container">
   <div class="book-img">
-    <img src="assets/svg/book-cover.jpg" >
+    <img src={{book.image}}>
   </div>
   <div class="book-txt">
     <div class="book-title-author">
-      <h3>Titlu</h3>
-      <h4>Raducanu Adrian</h4>
+      <h3>{{book.title.length > 40 ? book.title.slice(0, 20) + '...' : book.title}}</h3>
+      <h4>{{book.author}}</h4>
     </div>
     <div class="book-star">
       <i class="fa fa-star"></i>

@@ -12,6 +12,7 @@ import { RandomPageComponent } from './components/random-page/random-page.compon
 import { AccountPageComponent } from './components/account-page/account-page.component';
 import { BookMiniComponent } from './components/book-mini/book-mini.component';
 import { BookMaxComponent } from './components/book-max/book-max.component';
+import {FormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { BookMaxComponent } from './components/book-max/book-max.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [HttpClientModule],
   bootstrap: [AppComponent]

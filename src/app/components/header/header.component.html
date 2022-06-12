@@ -5,8 +5,10 @@
   </div>
   <div class="header-div input-div">
     <form>
-      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Cauta autori sau carti">
-      <i class="fa fa-search"></i>
+      <input type="text" class="form-control" id="inputSearch" name="titleOrAuthor" placeholder="Cauta autori sau carti" [(ngModel)]="titleOrAuthor">
+      <button type="submit" (click)="onClickSearch()">
+        <i class="fa fa-search"></i>
+      </button>
     </form>
   </div>
   <div class="header-div user-div">

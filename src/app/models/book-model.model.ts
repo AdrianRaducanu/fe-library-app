@@ -7,7 +7,8 @@ export interface BookModel {
   avgStar: number;
   borrow: BorrowModel
   category: String;
-  idBook: bigint;
+  description: String;
+  idBook: number;
   image: String;
   imgPaths: String;
   reviews: ReviewModel[]

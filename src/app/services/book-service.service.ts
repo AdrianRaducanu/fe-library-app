@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from "@angular/common/http";
+import { HttpClient, HttpParams } from "@angular/common/http";
+import {Observable} from "rxjs";
+import {BookModel} from "../models/book-model.model";
 
 @Injectable({
   providedIn: 'root'
@@ -11,7 +13,14 @@ export class BookServiceService {
 
   constructor(private http:HttpClient) { }
 
-  getAllBooks(){
-    return this.http.get(this.urlBook + 'getAllBooks');
+  getAllBooks():Observable<BookModel[]>{
+    return this.http.get<BookModel[]>(this.urlBook + 'getAllBooks');
   }
+
+  getBookWithTitleOrAuthorLike(titleOrAuthor : String){
+
+    return this.http.get(this.urlBook + 'getBookWithTitleOrAuthorLike?titleOrAuthor=' + titleOrAuthor);
+  }
+
+
 }
