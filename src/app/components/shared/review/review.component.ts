@@ -1,5 +1,8 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {ReviewModel} from "../../../models/review-model.model";
+import {ReviewServiceService} from "../../../services/review-service.service";
+import {UsersModel} from "../../../models/users-model.model";
+import {BorrowModel} from "../../../models/borrow-model.model";
 
 @Component({
   selector: 'app-review',
@@ -15,9 +18,27 @@ export class ReviewComponent implements OnInit {
     idUsers:0,
     stars: 0
   }
-  constructor() { }
+  user: UsersModel ={
+    borrow: {
+      borrowDate: new Date(),
+      dueDate: new Date(),
+      idBook: 0,
+      idBorrow: 0,
+      idUsers: 0
+    },
+    email: '',
+    firstName: '',
+    idUsers: 0,
+    lastName: '',
+    phone: '',
+    reviews: []
+  } ;
+  constructor(private reviewApi:ReviewServiceService) { }
 
   ngOnInit(): void {
+    this.reviewApi.getUserByReviewId(this.review.idReview).subscribe(
+      item => this.user = item
+    )
   }
 
 }

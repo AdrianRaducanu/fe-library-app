@@ -1,7 +1,7 @@
 <div class="review-container">
   <div class="one-review">
     <i class="fa fa-user-circle"></i>
-    <label>Raducanu Adrian</label>
+    <label>{{user.firstName + " " +user.lastName}}</label>
     <i class="fa star" [ngClass]="review.stars >= 1 ? 'fa-star' : 'fa-star-o'"></i>
     <i class="fa star" [ngClass]="review.stars >= 2 ? 'fa-star' : 'fa-star-o'"></i>
     <i class="fa star" [ngClass]="review.stars >= 3 ? 'fa-star' : 'fa-star-o'"></i>

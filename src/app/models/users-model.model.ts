@@ -5,7 +5,7 @@ export interface UsersModel {
   borrow: BorrowModel
   email: String;
   firstName: String;
-  idUsers: BigInt;
+  idUsers: number;
   lastName: String;
   phone: String;
   reviews: ReviewModel[]

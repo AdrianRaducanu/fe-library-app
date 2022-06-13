@@ -1,96 +1,36 @@
 <div class="books-container">
   <div class="filters">
     <div class="filters-available one-filter">
-      <div class="search-button">
-        <button id="button-search">
-          Cautare
-        </button>
-        <button id="button-delete">
-          Sterge
-        </button>
-      </div>
-      <label class="filter-title">Disponibilitate</label>
-      <form>
-        <div class="form-check form-check-inline">
-          <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
-          <label class="form-check-label" for="inlineRadio1">Toate cartile</label>
-        </div>
-        <div class="form-check form-check-inline">
-          <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
-          <label class="form-check-label" for="inlineRadio2">Cartile disponibile</label>
-        </div>
-      </form>
     </div>
     <div class="filters-category one-filter">
       <label class="filter-title">Categorie</label>
       <form>
-        <div class="form-check form-check-inline">
-          <input class="form-check-input" type="radio" name="inlineRadioOptions" id="categoryRadio1" value="option1">
-          <label class="form-check-label" for="inlineRadio1">Toate cartile</label>
-        </div>
-        <div class="form-check form-check-inline">
-          <input class="form-check-input" type="radio" name="inlineRadioOptions" id="categoryRadio2" value="option2">
-          <label class="form-check-label" for="inlineRadio2">Cartile disponibile</label>
-        </div>
-        <div class="form-check form-check-inline">
-          <input class="form-check-input" type="radio" name="inlineRadioOptions" id="categoryRadio3" value="option1">
-          <label class="form-check-label" for="inlineRadio1">Toate cartile</label>
-        </div>
-        <div class="form-check form-check-inline">
-          <input class="form-check-input" type="radio" name="inlineRadioOptions" id="categoryRadio4" value="option2">
-          <label class="form-check-label" for="inlineRadio2">Cartile disponibile</label>
-        </div>
-        <div class="form-check form-check-inline">
-          <input class="form-check-input" type="radio" name="inlineRadioOptions" id="categoryRadio5" value="option1">
-          <label class="form-check-label" for="inlineRadio1">Toate cartile</label>
-        </div>
-        <div class="form-check form-check-inline">
-          <input class="form-check-input" type="radio" name="inlineRadioOptions" id="categoryRadio6" value="option2">
-          <label class="form-check-label" for="inlineRadio2">Cartile disponibile</label>
+        <div class="form-check" *ngFor="let category of categories">
+          <input class="form-check-input" type="checkbox" value="" id="id-{{category}}" (click)="searchCategory(category)" #checkboxes>
+          <label class="form-check-label">
+            {{category}}
+          </label>
         </div>
       </form>
     </div>
     <div class="filters-author one-filter">
       <label class="filter-title">Cei mai cititi autori</label>
       <form>
-        <div class="form-check form-check-inline">
-          <input class="form-check-input" type="radio" name="inlineRadioOptions" id="authorRadio1" value="option1">
-          <label class="form-check-label" for="inlineRadio1">Toate cartile</label>
-        </div>
-        <div class="form-check form-check-inline">
-          <input class="form-check-input" type="radio" name="inlineRadioOptions" id="authorRadio2" value="option2">
-          <label class="form-check-label" for="inlineRadio2">Cartile disponibile</label>
-        </div>
-        <div class="form-check form-check-inline">
-          <input class="form-check-input" type="radio" name="inlineRadioOptions" id="authorRadio3" value="option1">
-          <label class="form-check-label" for="inlineRadio1">Toate cartile</label>
-        </div>
-        <div class="form-check form-check-inline">
-          <input class="form-check-input" type="radio" name="inlineRadioOptions" id="authorRadio4" value="option2">
-          <label class="form-check-label" for="inlineRadio2">Cartile disponibile</label>
-        </div>
-        <div class="form-check form-check-inline">
-          <input class="form-check-input" type="radio" name="inlineRadioOptions" id="authorRadio5" value="option1">
-          <label class="form-check-label" for="inlineRadio1">Toate cartile</label>
-        </div>
-        <div class="form-check form-check-inline">
-          <input class="form-check-input" type="radio" name="inlineRadioOptions" id="authorRadio6" value="option2">
-          <label class="form-check-label" for="inlineRadio2">Cartile disponibile</label>
-        </div>
+        <form>
+          <div class="form-check" *ngFor="let author of authors ">
+            <input class="form-check-input" type="checkbox" value="" id="id-{{author}}" (click)="searchAuthor(author)" #checkboxes>
+            <label class="form-check-label">
+              {{author}}
+            </label>
+          </div>
+
+        </form>
       </form>
     </div>
-    <div class="filters-sort one-filter">
-      <label class="filter-title">Sortare</label>
-      <form>
-        <div class="form-check form-check-inline">
-          <input class="form-check-input" type="radio" name="inlineRadioOptions" id="sortRadio1" value="option1">
-          <label class="form-check-label" for="inlineRadio1">Cele mai citite carti</label>
-        </div>
-        <div class="form-check form-check-inline">
-          <input class="form-check-input" type="radio" name="inlineRadioOptions" id="sortRadio2" value="option2">
-          <label class="form-check-label" for="inlineRadio2">Cele mai bune carti</label>
-        </div>
-      </form>
+    <div class="search-button">
+      <button id="button-delete"(click)="searchAllBooks()">
+        Sterge filtrarea
+      </button>
     </div>
 
   </div>

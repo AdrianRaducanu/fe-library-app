@@ -21,7 +21,9 @@
           <div class="one-review" *ngFor="let review of reviews">
             <app-review [review]="review"></app-review>
           </div>
-
+          <div class="one-review" *ngIf="reviews.length===0">
+            <label>Fara recenzii</label>
+          </div>
         </div>
       </div>
     </div>
