@@ -97,14 +97,14 @@
   <div class="all-books-container">
     <div class="books-table">
       <ul class="ul-books">
-        <li class="li-book" *ngFor="let book of booksOnPage">
+        <li class="li-book" *ngFor="let book of books">
           <app-book-mini [book] = "book"></app-book-mini>
         </li>
       </ul>
     </div>
     <div class="book-pagination">
       <i class="fa fa-angle-left" (click)="decrementPageNumber()"></i>
-      <h5>{{pageNumber}}</h5>
+      <h5>{{5}}</h5>
       <i class="fa fa-angle-right" (click)="incrementPageNumber()"></i>
     </div>
   </div>

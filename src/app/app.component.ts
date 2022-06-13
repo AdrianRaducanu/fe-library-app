@@ -11,19 +11,10 @@ import {BookDataService} from "./services/book-data.service";
 export class AppComponent implements OnInit{
   title = 'user-app';
 
-  constructor(
-    private bookApi : BookServiceService,
-    private bookData : BookDataService
-  ) {}
+  constructor() {}
 
   ngOnInit() {
-    this.bookApi.getAllBooks().subscribe({
-      next : value => {
-        //console.log(value);
-        this.bookData.setterBooks(value);
-        console.log(this.bookData.getterBooks().length)
-      }
-    });
+
   }
 
 }

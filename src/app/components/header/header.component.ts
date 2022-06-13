@@ -22,15 +22,10 @@ export class HeaderComponent implements OnInit {
   }
 
   onClickSearch():void{
-    console.log(this.titleOrAuthor);
-    this.bookApi.getBookWithTitleOrAuthorLike(this.titleOrAuthor).subscribe({
-      next : value => {
-        //console.log(value);
-        this.bookData.deleteBooks();
-        this.bookData.setterBooks(value);
-        console.log(this.bookData.getterBooks());
-      }
-    });
+    this.bookApi.getBookWithTitleOrAuthorLike(this.titleOrAuthor).subscribe(
+      item => this.bookData.subBook$?.next(item)
+    )
+
 
   }
 

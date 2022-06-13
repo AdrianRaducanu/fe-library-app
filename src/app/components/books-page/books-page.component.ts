@@ -1,35 +1,38 @@
 import { Component, OnInit } from '@angular/core';
 import {BookDataService} from "../../services/book-data.service";
 import {BookModel} from "../../models/book-model.model";
+import {Subject} from "rxjs";
 
 @Component({
   selector: 'app-books-page',
   templateUrl: './books-page.component.html',
   styleUrls: ['./books-page.component.scss']
 })
-export class BooksPageComponent implements OnInit {
+export class BooksPageComponent implements OnInit{
 
-  allBooks: BookModel[] = [...this.bookData.getterBooks()];
+  books:BookModel[] = []
 
-  pageNumber: number = 1;
-  numberOfBooksPerPage: number = 20;
+  noPage = 1;
+  noBooksOnPage = 20;
+  booksOnPage: BookModel[] = this.books.slice(Math.floor((this.noPage-1)*this.noBooksOnPage), (this.noPage)*this.noBooksOnPage-1)
+  constructor(public bookData : BookDataService) {
 
-  booksOnPage: BookModel[] = this.allBooks.slice(Math.round((this.pageNumber-1)*10), Math.round((this.pageNumber-1)*10 + this.numberOfBooksPerPage));
-
-
-  constructor(private bookData : BookDataService) { }
+  }
 
   ngOnInit(): void {
+    this.bookData.subBook$?.subscribe(
+      item => {
+        this.books= item;
+      })
+    }
 
-  }
+
 
   incrementPageNumber(){
-    this.pageNumber < Math.round(this.allBooks.length/this.numberOfBooksPerPage) ? Math.round(this.pageNumber++) : Math.round(this.pageNumber = this.allBooks.length/this.numberOfBooksPerPage);
-    this.booksOnPage = this.allBooks.slice(Math.round((this.pageNumber-1)*10), Math.round((this.pageNumber-1)*10 + this.numberOfBooksPerPage));
+
   }
   decrementPageNumber(){
-    this.pageNumber-1 > 0 ? Math.round(this.pageNumber--) : Math.round(this.pageNumber = 1);
-    this.booksOnPage = this.allBooks.slice((this.pageNumber-1)*10, (this.pageNumber-1)*10 + this.numberOfBooksPerPage);
   }
+
 
 }

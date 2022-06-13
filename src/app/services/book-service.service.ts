@@ -17,9 +17,10 @@ export class BookServiceService {
     return this.http.get<BookModel[]>(this.urlBook + 'getAllBooks');
   }
 
-  getBookWithTitleOrAuthorLike(titleOrAuthor : String){
+  getBookWithTitleOrAuthorLike(titleOrAuthor : String):Observable<BookModel[]>{
 
-    return this.http.get(this.urlBook + 'getBookWithTitleOrAuthorLike?titleOrAuthor=' + titleOrAuthor);
+    return this.http.get<BookModel[]>(this.urlBook + 'getBookWithTitleOrAuthorLike?titleOrAuthor=' + titleOrAuthor);
+
   }
 
 

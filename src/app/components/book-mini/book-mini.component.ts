@@ -31,7 +31,7 @@ export class BookMiniComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    console.log(this.book);
+    //console.log(this.book);
   }
 
 }
