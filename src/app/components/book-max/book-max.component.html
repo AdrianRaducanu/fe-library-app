@@ -11,11 +11,7 @@
         <h5>{{book.available ? "Disponibila" : "Rezervata"}}</h5>
         <h5 id="description-book-max">{{book.description}}</h5>
         <div class="book-star">
-          <i class="fa fa-star"></i>
-          <i class="fa fa-star"></i>
-          <i class="fa fa-star"></i>
-          <i class="fa fa-star"></i>
-          <i class="fa fa-star"></i>
+          <app-stars [numberOfStars]="book.avgStar"></app-stars>
         </div>
         <div class="book-reserve">
           <button>{{book.available ? "Rezerva" : "Indisponibila"}}</button>

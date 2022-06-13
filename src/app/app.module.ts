@@ -13,6 +13,7 @@ import { AccountPageComponent } from './components/account-page/account-page.com
 import { BookMiniComponent } from './components/book-mini/book-mini.component';
 import { BookMaxComponent } from './components/book-max/book-max.component';
 import {FormsModule} from "@angular/forms";
+import { StarsComponent } from './components/shared/stars/stars.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import {FormsModule} from "@angular/forms";
     RandomPageComponent,
     AccountPageComponent,
     BookMiniComponent,
-    BookMaxComponent
+    BookMaxComponent,
+    StarsComponent
   ],
   imports: [
     BrowserModule,
