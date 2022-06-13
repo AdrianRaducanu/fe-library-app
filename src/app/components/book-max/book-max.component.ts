@@ -1,6 +1,8 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {BookModel} from "../../models/book-model.model";
 import { Output, EventEmitter } from '@angular/core';
+import {ReviewModel} from "../../models/review-model.model";
+import {ReviewServiceService} from "../../services/review-service.service";
 
 @Component({
   selector: 'app-book-max',
@@ -9,8 +11,12 @@ import { Output, EventEmitter } from '@angular/core';
 })
 export class BookMaxComponent implements OnInit {
 
+  reviews:ReviewModel[] = [];
+
   @Output() newItemEvent = new EventEmitter<boolean>();
+
   falseVar: boolean = false;
+
   @Input() book:BookModel = {
     author: "",
     available: true,
@@ -30,9 +36,15 @@ export class BookMaxComponent implements OnInit {
       idUsers: 0,
     }
   };
-  constructor() { }
+  constructor(public reviewApi: ReviewServiceService) { }
 
   ngOnInit(): void {
+    this.reviewApi.getReviewsByBookId(this.book.idBook).subscribe(
+      item => {
+        this.reviews = item;
+        console.log(this.reviews);
+      }
+    )
   }
 
   toggleParent(falseVar : boolean){

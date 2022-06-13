@@ -27,4 +27,6 @@ export class BookServiceService {
     return this.http.get<BookModel[]>(this.urlBook + 'getBooksSortedByAvgStar');
   }
 
+
+
 }

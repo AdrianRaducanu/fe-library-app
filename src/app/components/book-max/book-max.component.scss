@@ -61,20 +61,7 @@
     .reviews{
       display: flex;
       flex-direction: column;
-      .one-review{
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-      }
-      .fa-user-circle{
-        color: #252525;
-        font-size: 1.4rem;
-      }
-      label{
-        font-size: 1.3rem;
-        font-weight: lighter;
-        margin: 0 1rem;
-      }
+
     }
 
   }

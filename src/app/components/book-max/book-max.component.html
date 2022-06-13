@@ -18,33 +18,10 @@
         </div>
         <h5 id="h5-recenzii">Recenzii</h5>
         <div class="reviews">
-          <div class="one-review">
-            <i class="fa fa-user-circle"></i>
-            <label>Raducanu Adrian</label>
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star"></i>
+          <div class="one-review" *ngFor="let review of reviews">
+            <app-review [review]="review"></app-review>
           </div>
-          <div class="one-review">
-            <i class="fa fa-user-circle"></i>
-            <label>Raducanu Adrian</label>
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star"></i>
-          </div>
-          <div class="one-review">
-            <i class="fa fa-user-circle"></i>
-            <label>Raducanu Adrian</label>
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star"></i>
-          </div>
+
         </div>
       </div>
     </div>

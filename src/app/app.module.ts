@@ -14,6 +14,7 @@ import { BookMiniComponent } from './components/book-mini/book-mini.component';
 import { BookMaxComponent } from './components/book-max/book-max.component';
 import {FormsModule} from "@angular/forms";
 import { StarsComponent } from './components/shared/stars/stars.component';
+import { ReviewComponent } from './components/shared/review/review.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { StarsComponent } from './components/shared/stars/stars.component';
     AccountPageComponent,
     BookMiniComponent,
     BookMaxComponent,
-    StarsComponent
+    StarsComponent,
+    ReviewComponent
   ],
   imports: [
     BrowserModule,

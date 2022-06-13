@@ -1,7 +1,7 @@
 export interface ReviewModel {
   fullReview:String;
-  idBook:BigInt;
-  idReview:BigInt;
-  idUsers:BigInt;
+  idBook:number;
+  idReview:number;
+  idUsers:number;
   stars: number;
 }
