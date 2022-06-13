@@ -97,14 +97,14 @@
   <div class="all-books-container">
     <div class="books-table">
       <ul class="ul-books">
-        <li class="li-book" *ngFor="let book of books">
+        <li class="li-book" *ngFor="let book of books.slice((noPage-1)*noBooksOnPage, noPage*noBooksOnPage)">
           <app-book-mini [book] = "book"></app-book-mini>
         </li>
       </ul>
     </div>
     <div class="book-pagination">
       <i class="fa fa-angle-left" (click)="decrementPageNumber()"></i>
-      <h5>{{5}}</h5>
+      <h5>{{noPage}}</h5>
       <i class="fa fa-angle-right" (click)="incrementPageNumber()"></i>
     </div>
   </div>

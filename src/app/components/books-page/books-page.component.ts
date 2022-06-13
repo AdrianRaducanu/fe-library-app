@@ -29,9 +29,14 @@ export class BooksPageComponent implements OnInit{
 
 
   incrementPageNumber(){
-
+    if(this.noPage < Math.floor(this.books.length / this.noBooksOnPage)){
+      this.noPage++;
+    }
   }
   decrementPageNumber(){
+    if(this.noPage > 1){
+      this.noPage--;
+    }
   }
 
 
