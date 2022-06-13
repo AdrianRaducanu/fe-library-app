@@ -15,9 +15,7 @@ export class BooksPageComponent implements OnInit{
   noPage = 1;
   noBooksOnPage = 20;
   booksOnPage: BookModel[] = this.books.slice(Math.floor((this.noPage-1)*this.noBooksOnPage), (this.noPage)*this.noBooksOnPage-1)
-  constructor(public bookData : BookDataService) {
-
-  }
+  constructor(private bookData : BookDataService) {}
 
   ngOnInit(): void {
     this.bookData.subBook$?.subscribe(

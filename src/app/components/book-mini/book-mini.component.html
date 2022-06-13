@@ -1,5 +1,5 @@
 <div class="mini-book-container">
-  <div class="book-img">
+  <div class="book-img" (click)="toggle()">
     <img src={{book.image}}>
   </div>
   <div class="book-txt">
@@ -15,4 +15,5 @@
       <i class="fa fa-star"></i>
     </div>
   </div>
+  <app-book-max *ngIf="toggleVar" [book]="book" (newItemEvent)="toggleParent($event)"></app-book-max>
 </div>

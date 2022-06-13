@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import {BookServiceService} from "../../services/book-service.service";
+import {BookModel} from "../../models/book-model.model";
+import {BookDataService} from "../../services/book-data.service";
 
 @Component({
   selector: 'app-main-page',
@@ -7,11 +10,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MainPageComponent implements OnInit {
 
-  toggleVar:boolean = true;
+  toggleVar: boolean = true;
+  bestBooks : BookModel[] = [];
 
-  constructor() { }
+  constructor(
+    private bookApi: BookServiceService,
+    private bookData : BookDataService
+  ) {}
 
   ngOnInit(): void {
+    this.bookApi.getBestBooks().subscribe(
+      item => this.bestBooks = item
+    )
   }
 
   toggle():void{

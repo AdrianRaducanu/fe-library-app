@@ -8,6 +8,7 @@ import {BookModel} from "../../models/book-model.model";
 })
 export class BookMiniComponent implements OnInit {
 
+  toggleVar:boolean = false;
   @Input() book:BookModel = {
     author: "",
     available: true,
@@ -32,6 +33,12 @@ export class BookMiniComponent implements OnInit {
 
   ngOnInit(): void {
     //console.log(this.book);
+  }
+  toggle():void{
+    this.toggleVar = true;
+  }
+  toggleParent(x : boolean){
+    this.toggleVar = false;
   }
 
 }

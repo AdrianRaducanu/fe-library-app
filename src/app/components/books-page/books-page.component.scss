@@ -1,5 +1,6 @@
 .books-container{
   display: flex;
+  width: 100%;
   height: 100%;
   background-image:
     linear-gradient(90deg, rgba(244,231,222,0) 0%, rgba(255,255,255,1) 45%),
@@ -55,8 +56,7 @@
   }
 
   .books-table{
-
-    width: 80%;
+    width: 100%;
     height: 65rem;
     overflow: hidden;
     .ul-books{
@@ -80,6 +80,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 80%;
 }
 .book-pagination{
   height: 5rem;

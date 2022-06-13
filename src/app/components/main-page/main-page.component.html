@@ -25,11 +25,9 @@
       <h4>Cele mai bune 5 carti</h4>
     </div>
     <div class="top-5-books-list">
-      <app-book-mini></app-book-mini>
-      <app-book-mini></app-book-mini>
-      <app-book-mini></app-book-mini>
-      <app-book-mini></app-book-mini>
-      <app-book-mini></app-book-mini>
+      <li *ngFor="let book of bestBooks">
+        <app-book-mini [book] = "book"></app-book-mini>
+      </li>
     </div>
   </div>
 

@@ -10,6 +10,7 @@ export class BookDataService {
 
   subBook$ : BehaviorSubject<BookModel[]> = new BehaviorSubject<BookModel[]>([]);
 
+
   constructor(private bookApi: BookServiceService) {
     this.bookApi.getAllBooks().subscribe(
       item => {

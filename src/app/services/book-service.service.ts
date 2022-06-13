@@ -23,5 +23,8 @@ export class BookServiceService {
 
   }
 
+  getBestBooks():Observable<BookModel[]>{
+    return this.http.get<BookModel[]>(this.urlBook + 'getBooksSortedByAvgStar');
+  }
 
 }
