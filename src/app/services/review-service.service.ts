@@ -26,4 +26,15 @@ export class ReviewServiceService {
     return this.http.get<UsersModel>(this.urlReview + "getUserByReviewId?idReview=" + idReview.toString());
   }
 
+  getBookByReviewId(idReview: number):Observable<BookModel>{
+    return this.http.get<BookModel>(this.urlReview + "getBookByReviewId?idReview=" + idReview.toString());
+  }
+
+  saveReview(idBook: number, idUser:number, fullReview: String, stars: number):Observable<any>{
+    return this.http.post<any>(this.urlReview + "saveReview?idBook="+idBook.toString() + "&idUser="+idUser.toString(), {
+      "fullReview": fullReview,
+      "stars": stars
+    })
+  }
+
 }

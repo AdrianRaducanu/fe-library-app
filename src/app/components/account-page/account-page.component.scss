@@ -18,7 +18,8 @@
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    height: 30%;
+    align-items: center;
+    height: 50%;
     padding: 2rem 5rem;
     border-radius: 15px;
 
@@ -68,4 +69,22 @@
 
 
   }
+}
+textarea{
+  width: 60%;
+  height: 30%;
+}
+.stars{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1rem;
+}
+.star{
+  color: #FFCB77;
+  cursor: pointer;
+}
+.golden{
+  color: #ef7a83;
 }

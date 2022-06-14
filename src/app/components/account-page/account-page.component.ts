@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
 import {UsersDataService} from "../../services/users-data.service";
 import {UsersModel} from "../../models/users-model.model";
 import {ReviewServiceService} from "../../services/review-service.service";
@@ -15,6 +15,11 @@ export class AccountPageComponent implements OnInit {
 
   userBook:BookModel[] = [];
   dueDate:Date = new Date();
+
+  reviewText: String = "";
+  reviewNote: number = 0;
+
+  @ViewChild('star1') input: any;
 
   bookBorrowed: BookModel={
     author: "",
@@ -84,11 +89,10 @@ export class AccountPageComponent implements OnInit {
         console.log(this.userLogged)
 
         for(let rev of this.userLogged.reviews){
-          this.bookApi.getBook(rev.idBook).subscribe(
-            item => {
-              console.log(item);
-              this.userBook = [...this.userBook, item];
-              console.log(this.userBook);
+          this.reviewApi.getBookByReviewId(rev.idReview).subscribe(
+            itemB => {
+              console.log(itemB);
+              this.userBook = [...this.userBook, itemB];
             }
           )
         }
@@ -97,11 +101,16 @@ export class AccountPageComponent implements OnInit {
 
 
   }
-  logoff(){
-    window.location.reload();
+  reviewStar(x:number){
+    this.reviewNote = x;
+    console.log(this.reviewNote);
   }
   consoleBorrow(){
     console.log(this.userLogged.borrow);
   }
-
+  saveReview(){
+    this.reviewApi.saveReview(this.bookBorrowed.idBook, this.userLogged.idUsers, this.reviewText, this.reviewNote).subscribe(
+      item => console.log(item)
+    )
+  }
 }
