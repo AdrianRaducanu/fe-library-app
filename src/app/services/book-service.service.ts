@@ -13,6 +13,10 @@ export class BookServiceService {
 
   constructor(private http:HttpClient) { }
 
+  getBook(idBook : number):Observable<BookModel>{
+    return this.http.get<BookModel>(this.urlBook + "getBookByIdBook?idBook=" + idBook.toString());
+  }
+
   getAllBooks():Observable<BookModel[]>{
     return this.http.get<BookModel[]>(this.urlBook + 'getAllBooks');
   }

@@ -31,6 +31,7 @@ export class ReviewComponent implements OnInit {
     idUsers: 0,
     lastName: '',
     phone: '',
+    password: '',
     reviews: []
   } ;
   constructor(private reviewApi:ReviewServiceService) { }

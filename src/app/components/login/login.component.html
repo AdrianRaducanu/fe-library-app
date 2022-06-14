@@ -1,0 +1,20 @@
+<div class="login-container">
+  <div class="login-card">
+    <div class="login-input">
+      <input placeholder="E-mail" type="email" [(ngModel)]="email" [ngClass]="error? 'error' : ''">
+      <input placeholder="Parola" type="password" [(ngModel)]="password" [ngClass]="error? 'error' : ''">
+      <input placeholder="Prenume" type="text" [(ngModel)]="firstName" [ngClass]="error? 'error' : ''" *ngIf="createToggle">
+      <input placeholder="Nume" type="text" [(ngModel)]="lastName" [ngClass]="error? 'error' : ''" *ngIf="createToggle">
+      <input placeholder="telefon" type="text" [(ngModel)]="phone" [ngClass]="error? 'error' : ''" *ngIf="createToggle">
+
+    </div>
+    <div class="login-btns" *ngIf="!createToggle">
+      <button class="btn-login" (click)="login()">Intra in cont</button>
+      <button class="btn-sign-up" (click)="signUp()">Creeaza cont</button>
+    </div>
+    <div class="login-btns" *ngIf="createToggle">
+      <button class="btn-login" (click)="create()">Inregistrare</button>
+      <button class="btn-sign-up" (click)="back()">Inapoi</button>
+    </div>
+  </div>
+</div>

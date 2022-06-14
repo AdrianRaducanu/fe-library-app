@@ -1,5 +1,10 @@
 <div class="app-main-div">
-  <app-header></app-header>
-  <app-menu></app-menu>
+  <div class="app-container" *ngIf="isLogged">
+    <app-header></app-header>
+    <app-menu></app-menu>
+  </div>
+  <div class="login-container" *ngIf="!isLogged">
+    <app-login (newItemEvent)="toggleIsLogged($event)"></app-login>
+  </div>
 </div>
 

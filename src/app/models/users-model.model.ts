@@ -8,5 +8,6 @@ export interface UsersModel {
   idUsers: number;
   lastName: String;
   phone: String;
+  password: String;
   reviews: ReviewModel[]
 }

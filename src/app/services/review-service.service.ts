@@ -18,7 +18,12 @@ export class ReviewServiceService {
     return this.http.get<ReviewModel[]>(this.urlReview +"getReviewsByIdBook?idBook=" +idBook.toString());
   }
 
+  getReviewsByUserId(idUser: number):Observable<ReviewModel[]>{
+    return this.http.get<ReviewModel[]>(this.urlReview +"getReviewsByIdUser?idUser=" +idUser.toString());
+  }
+
   getUserByReviewId(idReview: number):Observable<UsersModel>{
     return this.http.get<UsersModel>(this.urlReview + "getUserByReviewId?idReview=" + idReview.toString());
   }
+
 }
