@@ -14,7 +14,8 @@
           <app-stars [numberOfStars]="book.avgStar"></app-stars>
         </div>
         <div class="book-reserve">
-          <button>{{book.available ? "Rezerva" : "Indisponibila"}}</button>
+          <button *ngIf="!isReserved && !hasReserved" (click)="createBorrow()">Rezerva</button>
+          <button class="reserved" *ngIf="isReserved || hasReserved">{{isReserved&&hasReserved ? 'Ai rezervat cartea' : 'Indisponibila'}}</button>
         </div>
         <h5 id="h5-recenzii">Recenzii</h5>
         <div class="reviews">

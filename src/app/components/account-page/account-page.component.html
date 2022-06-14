@@ -2,11 +2,11 @@
   <div class="account-txt-btn">
     <div class="account-text">
       <h2>Salut {{userLogged.firstName}}</h2>
-      <h4 *ngIf="userLogged.reviews.length > 0">Ai imprumutat Cartea X pe care trebuie sa o returnezi pana pe 25-07-2021</h4>
-      <h4 *ngIf="userLogged.reviews.length === 0">Alege o carte pe care vrei sa o citesti</h4>
+      <h4 *ngIf="userLogged.borrow.idBorrow">Ai imprumutat "{{bookBorrowed.title}}" pe care trebuie sa o returnezi pana pe {{dueDate | date}}</h4>
+      <h4 *ngIf="!userLogged.borrow.idBorrow" (click)="consoleBorrow()">Alege o carte pe care vrei sa o citesti</h4>
     </div>
     <div class="account-button">
-      <button (click)="logoff()">Iesi din cont</button>
+      <button (click)="logoff()">Returneaza cartea</button>
     </div>
   </div>
   <div class="last-books-container">
