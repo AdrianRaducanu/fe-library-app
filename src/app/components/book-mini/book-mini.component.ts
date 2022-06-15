@@ -1,5 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {BookModel} from "../../models/book-model.model";
+import {ReviewServiceService} from "../../services/review-service.service";
 
 @Component({
   selector: 'app-book-mini',
@@ -32,7 +33,7 @@ export class BookMiniComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    //console.log(this.book);
+
   }
   toggle():void{
     this.toggleVar = true;

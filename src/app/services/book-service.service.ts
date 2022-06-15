@@ -31,6 +31,10 @@ export class BookServiceService {
     return this.http.get<BookModel[]>(this.urlBook + 'getBooksSortedByAvgStar');
   }
 
+  getRandom(category: String):Observable<BookModel>{
+    return this.http.get<BookModel>(this.urlBook + "getRandomBook?category=" + category);
+  }
+
 
 
 }

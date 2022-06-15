@@ -18,6 +18,25 @@ export class RandomPageComponent implements OnInit {
   categories: String[] =[];
   randomCat: String = "";
   weight: number[] = [];
+  randomBook: BookModel = {
+    author: "",
+    available: true,
+    avgStar: 0,
+    description: "",
+    idBook: 0,
+    image: "",
+    imgPaths: "",
+    reviews: [],
+    title: "",
+    category: "",
+    borrow:{
+      borrowDate: new Date(),
+      dueDate: new Date(),
+      idBook: 0,
+      idBorrow: 0,
+      idUsers: 0,
+    }
+  }
   constructor(private reviewApi: ReviewServiceService, private userData: UsersDataService, private bookApi: BookServiceService) { }
 
   ngOnInit(): void {
@@ -73,14 +92,14 @@ export class RandomPageComponent implements OnInit {
 
       for (let itemIndex = 0; itemIndex < this.categories.length; itemIndex += 1) {
         if (cumulativeWeights[itemIndex] >= randomNumber) {
-          //return {
-           // randomCat: this.categories[itemIndex]
-         // };
           this.randomCat = this.categories[itemIndex];
           console.log(this.randomCat)
           break;
         }
       }
+      this.bookApi.getRandom(this.randomCat).subscribe(
+        item => this.randomBook = item
+      )
     }
     this.categories = [];
     this.weight = []
