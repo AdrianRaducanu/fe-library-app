@@ -30,7 +30,7 @@
     <app-main-page *ngSwitchCase="1"></app-main-page>
     <app-books-page *ngSwitchCase="2"></app-books-page>
     <app-random-page *ngSwitchCase="3"></app-random-page>
-    <app-account-page *ngSwitchCase="4"></app-account-page>
+    <app-account-page *ngSwitchCase="4" (refresh)="receiveRefresh($event)"></app-account-page>
   </div>
 </div>
 

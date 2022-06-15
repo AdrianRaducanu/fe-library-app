@@ -1,25 +1,26 @@
 <div class="account-container">
   <div class="account-txt-btn">
     <div class="account-text">
-      <h2>Salut {{userLogged.firstName}}</h2>
-      <h4 *ngIf="userLogged.borrow.idBorrow">Ai imprumutat "{{bookBorrowed.title}}" pe care trebuie sa o returnezi pana pe {{dueDate | date}}</h4>
-      <h4 *ngIf="!userLogged.borrow.idBorrow" (click)="consoleBorrow()">Alege o carte pe care vrei sa o citesti</h4>
+      <h4 *ngIf="userLogged.borrow.idBorrow">"{{bookBorrowed.title}}" trebuie returnata pana pe {{dueDate | date}}</h4>
+      <h4 *ngIf="!userLogged.borrow.idBorrow" (click)="consoleBorrow()">Alege o carte pe care vrei sa o citesti.<br>Dupa ce ai inchiriat-o, poti sa adaugi o recenzie.<br>Pentru a rezerva o noua carte, va trebui sa o returnezi pe cea inchiriata anterior.</h4>
     </div>
-    <div class="account-button">
-      <button (click)="saveReview()">Adauga recenzie</button>
+    <div class="account-button" *ngIf="userLogged.borrow.idBorrow">
+      <button (click)="saveReview()" *ngIf="userLogged.borrow.idBorrow">Adauga recenzie</button>
+      <button (click)="removeBorrow()" *ngIf="userLogged.borrow.idBorrow" id="return-btn">Returneaza cartea</button>
     </div>
-    <textarea [(ngModel)]="reviewText"></textarea>
-    <div class="stars">
-      <i class="fa fa-star-o star" id="star1" (click)="reviewStar(1)" ></i>
-      <i class="fa fa-star-o star" id="star2" (click)="reviewStar(2)" ></i>
-      <i class="fa fa-star-o star" id="star3" (click)="reviewStar(3)" ></i>
-      <i class="fa fa-star-o star" id="star4" (click)="reviewStar(4)" ></i>
-      <i class="fa fa-star-o star" id="star5" (click)="reviewStar(5)" ></i>
+    <textarea [(ngModel)]="reviewText" *ngIf="userLogged.borrow.idBorrow"></textarea>
+    <div class="stars" *ngIf="userLogged.borrow.idBorrow">
+      <i class="fa star" id="star1" (click)="reviewStar(1)" [ngClass]="reviewNote >= 1? 'fa-star' : 'fa-star-o'"></i>
+      <i class="fa star" id="star2" (click)="reviewStar(2)" [ngClass]="reviewNote >= 2? 'fa-star' : 'fa-star-o'"></i>
+      <i class="fa star" id="star3" (click)="reviewStar(3)" [ngClass]="reviewNote >= 3? 'fa-star' : 'fa-star-o'"></i>
+      <i class="fa star" id="star4" (click)="reviewStar(4)" [ngClass]="reviewNote >= 4? 'fa-star' : 'fa-star-o'"></i>
+      <i class="fa star" id="star5" (click)="reviewStar(5)" [ngClass]="reviewNote >= 5? 'fa-star' : 'fa-star-o'"></i>
+      <p>{{reviewNote}}</p>
     </div>
   </div>
   <div class="last-books-container">
     <div class="last-books-text" >
-      <h4>{{userBook.length > 0 ? "Ultimile carti imprumutate" : ""}}</h4>
+      <h4>{{userBook.length > 0 ? "Recenziile tale" : ""}}</h4>
     </div>
     <div class="last-books-list">
       <li *ngFor="let book of userBook">

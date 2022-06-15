@@ -101,6 +101,6 @@ export class BookMaxComponent implements OnInit {
         item => console.log(item)
       )
     }
-
+    this.toggleParent(false);
   }
 }

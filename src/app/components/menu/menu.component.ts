@@ -26,4 +26,7 @@ export class MenuComponent implements OnInit {
   switchToAccount():void {
     this.pagesSwitch = 4;
   }
+  receiveRefresh(x : number){
+    this.pagesSwitch = x;
+  }
 }

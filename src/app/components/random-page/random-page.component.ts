@@ -1,4 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import {ReviewServiceService} from "../../services/review-service.service";
+import {UsersDataService} from "../../services/users-data.service";
+import {BookServiceService} from "../../services/book-service.service";
+import {ReviewModel} from "../../models/review-model.model";
+import {BookModel} from "../../models/book-model.model";
 
 @Component({
   selector: 'app-random-page',
@@ -7,9 +12,78 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RandomPageComponent implements OnInit {
 
-  constructor() { }
+  userId : number = 0;
+  revs: ReviewModel[] = [];
+  books: BookModel[] = [];
+  categories: String[] =[];
+  randomCat: String = "";
+  weight: number[] = [];
+  constructor(private reviewApi: ReviewServiceService, private userData: UsersDataService, private bookApi: BookServiceService) { }
 
   ngOnInit(): void {
+    this.userData.subUser$.subscribe(
+      item => {
+        this.userId = item.idUsers;
+        this.reviewApi.getReviewsByUserId(this.userId).subscribe(
+          itemB => {
+            this.revs = itemB;
+            for(let rev of this.revs){
+              this.reviewApi.getBookByReviewId(rev.idReview).subscribe(
+                itemC => {
+                    this.books = [...this.books, itemC]
+                }
+              )
+            }
+          }
+        )
+      }
+    )
+  }
+  generateCategoriesWithWeight(){
+
+  }
+  generateRand(){
+
+      console.log(this.books);
+      for(let book of this.books){
+        console.log(this.categories.indexOf(book.category))
+        let x = this.categories.indexOf(book.category);
+        if(x !== -1){
+          console.log("x e bun")
+          this.weight[x] ++;
+        }else{
+          console.log("x nu e buun")
+          this.categories.push(book.category);
+          this.weight.push(1);
+        }
+      }
+      console.log(this.categories);
+      console.log(this.weight);
+
+
+    if(!this.categories.length){
+      console.log("random book");
+    }else{
+      let cumulativeWeights:number[] = [];
+      for (let i = 0; i < this.weight.length; i += 1) {
+        cumulativeWeights[i] = this.weight[i] + (cumulativeWeights[i - 1] || 0);
+      }
+      const maxCumulativeWeight = cumulativeWeights[cumulativeWeights.length - 1];
+      const randomNumber = maxCumulativeWeight * Math.random();
+
+      for (let itemIndex = 0; itemIndex < this.categories.length; itemIndex += 1) {
+        if (cumulativeWeights[itemIndex] >= randomNumber) {
+          //return {
+           // randomCat: this.categories[itemIndex]
+         // };
+          this.randomCat = this.categories[itemIndex];
+          console.log(this.randomCat)
+          break;
+        }
+      }
+    }
+    this.categories = [];
+    this.weight = []
   }
 
 }

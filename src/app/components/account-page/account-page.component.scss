@@ -1,5 +1,5 @@
 .account-container{
-  height: 100%;
+  height: 102%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -32,28 +32,31 @@
       display: flex;
       align-items: center;
       justify-content: center;
-
-      button{
-        margin-bottom: 1rem;
-        padding:5px 15px;
+      #return-btn{
         background: #ef7a83;
+      }
+      button{
+        padding:5px 15px;
+        background: #625bdc;
         color: #F6F6F6;
         font-weight: lighter;
         outline: none;
         border-radius: 10px;
         border: none;
         font-size: large;
+        margin: 0 1rem 1rem 1rem;
+
       }
     }
   }
 }
 .last-books-container{
-  padding-top: 5rem;
+  padding-top: 3rem;
   width: 60%;
   height: 100%;
   overflow: hidden;
   .last-books-text{
-    margin-bottom: 5rem;
+    margin-bottom: 1rem;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -63,7 +66,8 @@
     }
   }
   .last-books-list{
-    overflow: scroll;
+    overflow-x: scroll;
+    overflow-y: hidden;
     display: flex;
     flex-direction: row;
 
@@ -80,11 +84,19 @@ textarea{
   align-items: center;
   justify-content: center;
   margin-top: 1rem;
+  p{
+    padding-top: 1.2rem;
+    color: #D7D9DC;
+    margin-left: 0.5rem;
+  }
 }
 .star{
   color: #FFCB77;
   cursor: pointer;
 }
-.golden{
-  color: #ef7a83;
+.star-full{
+  font-size: 2rem;
+}
+li{
+  list-style-type: none;
 }

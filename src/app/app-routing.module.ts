@@ -4,8 +4,13 @@ import {MainPageComponent} from "./components/main-page/main-page.component";
 import {BooksPageComponent} from "./components/books-page/books-page.component";
 import {RandomPageComponent} from "./components/random-page/random-page.component";
 import {AccountPageComponent} from "./components/account-page/account-page.component";
+import {LoginComponent} from "./components/login/login.component";
 
 const routes: Routes = [
+  {
+    path: '',
+    component: LoginComponent
+  },
   {
     path: 'main-page',
     component: MainPageComponent

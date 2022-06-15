@@ -1,4 +1,4 @@
-import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
+import {Component, ElementRef, EventEmitter, OnInit, Output, ViewChild} from '@angular/core';
 import {UsersDataService} from "../../services/users-data.service";
 import {UsersModel} from "../../models/users-model.model";
 import {ReviewServiceService} from "../../services/review-service.service";
@@ -13,13 +13,13 @@ import {BorrowServiceService} from "../../services/borrow-service.service";
 })
 export class AccountPageComponent implements OnInit {
 
+  @Output() refresh = new EventEmitter<number>();
+
   userBook:BookModel[] = [];
   dueDate:Date = new Date();
 
   reviewText: String = "";
   reviewNote: number = 0;
-
-  @ViewChild('star1') input: any;
 
   bookBorrowed: BookModel={
     author: "",
@@ -109,8 +109,20 @@ export class AccountPageComponent implements OnInit {
     console.log(this.userLogged.borrow);
   }
   saveReview(){
-    this.reviewApi.saveReview(this.bookBorrowed.idBook, this.userLogged.idUsers, this.reviewText, this.reviewNote).subscribe(
+    if(this.reviewText){
+      this.reviewApi.saveReview(this.bookBorrowed.idBook, this.userLogged.idUsers, this.reviewText, this.reviewNote).subscribe(
+        item => console.log(item)
+      )
+    }
+    this.refresh.emit(1);
+  }
+  removeBorrow(){
+    console.log(this.userLogged.borrow.idBorrow)
+
+    this.borrowApi.deleteBorrowByIdBorrow(this.userLogged.borrow.idBorrow).subscribe(
       item => console.log(item)
     )
+    this.refresh.emit(1);
+
   }
 }
