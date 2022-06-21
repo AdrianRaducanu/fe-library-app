@@ -10,7 +10,4 @@ describe('BorrowDataService', () => {
     service = TestBed.inject(BorrowDataService);
   });
 
-  it('should be created', () => {
-    expect(service).toBeTruthy();
-  });
 });

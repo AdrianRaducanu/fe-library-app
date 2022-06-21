@@ -2,7 +2,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { RandomPageComponent } from './random-page.component';
 
-describe('RandomPageComponent', () => {
+fdescribe('RandomPageComponent', () => {
   let component: RandomPageComponent;
   let fixture: ComponentFixture<RandomPageComponent>;
 
@@ -19,7 +19,12 @@ describe('RandomPageComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
+  it("should return categories", () => {
+    component.categories = ["A", "B"];
+    component.weight = [2, 3];
+    component.generateRand()
+    expect(component.randomCat).toBe("A" || "B")
+  })
 });
+
+

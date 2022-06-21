@@ -5,7 +5,7 @@
   </div>
   <div class="header-div input-div">
     <form>
-      <input type="text" class="form-control" id="inputSearch" name="titleOrAuthor" placeholder="Cauta autori sau carti" [(ngModel)]="titleOrAuthor">
+      <input type="text" class="form-control" id="inputSearch" name="titleOrAuthor" placeholder="Cauta autori sau carti" [(ngModel)]="titleOrAuthor" (change)="onClickSearch()">
       <button type="submit" (click)="onClickSearch()">
         <i class="fa fa-search"></i>
       </button>

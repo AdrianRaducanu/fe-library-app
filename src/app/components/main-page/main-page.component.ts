@@ -15,7 +15,6 @@ export class MainPageComponent implements OnInit {
 
   constructor(
     private bookApi: BookServiceService,
-    private bookData : BookDataService
   ) {}
 
   ngOnInit(): void {
