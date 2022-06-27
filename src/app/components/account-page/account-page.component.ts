@@ -91,8 +91,17 @@ export class AccountPageComponent implements OnInit {
         for(let rev of this.userLogged.reviews){
           this.reviewApi.getBookByReviewId(rev.idReview).subscribe(
             itemB => {
-              console.log(itemB);
-              this.userBook = [...this.userBook, itemB];
+              console.log(itemB.idBook);
+              let ok = 0;
+              for(let b of this.userBook){
+                if(b.idBook === itemB.idBook){
+                  ok = 1;
+                }
+              }
+              if(!ok){
+                this.userBook = [...this.userBook, itemB];
+              }
+
             }
           )
         }

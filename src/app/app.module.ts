@@ -16,6 +16,7 @@ import {FormsModule} from "@angular/forms";
 import { StarsComponent } from './components/shared/stars/stars.component';
 import { ReviewComponent } from './components/shared/review/review.component';
 import { LoginComponent } from './components/login/login.component';
+import { GenerateRandomComponent } from './shared/generate-random/generate-random.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { LoginComponent } from './components/login/login.component';
     BookMaxComponent,
     StarsComponent,
     ReviewComponent,
-    LoginComponent
+    LoginComponent,
+    GenerateRandomComponent
   ],
   imports: [
     BrowserModule,

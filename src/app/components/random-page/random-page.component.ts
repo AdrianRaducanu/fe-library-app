@@ -58,9 +58,7 @@ export class RandomPageComponent implements OnInit {
       }
     )
   }
-  generateCategoriesWithWeight(){
 
-  }
   generateRand(){
 
       console.log(this.books);
@@ -81,7 +79,9 @@ export class RandomPageComponent implements OnInit {
 
 
     if(!this.categories.length){
-      console.log("random book");
+      this.bookApi.getRandom(this.randomCat).subscribe(
+        item => this.randomBook = item
+      )
     }else{
       let cumulativeWeights:number[] = [];
       for (let i = 0; i < this.weight.length; i += 1) {

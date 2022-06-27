@@ -8,7 +8,7 @@
       <div class="book-max-txt-container">
         <h3>{{book.title}}</h3>
         <h4>{{book.author}}</h4>
-        <h5>{{book.available ? "Disponibila" : "Rezervata"}}</h5>
+        <h5 id="category">Categorie : {{book.category}}</h5>
         <h5 id="description-book-max">{{book.description}}</h5>
         <div class="book-star">
           <app-stars [numberOfStars]="book.avgStar"></app-stars>
