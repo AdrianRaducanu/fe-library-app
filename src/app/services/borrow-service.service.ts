@@ -28,8 +28,15 @@ export class BorrowServiceService {
   getBookByBorrowId(idBorrow: number):Observable<BookModel>{
     return this.http.get<BookModel>(this.urlBorrow + "getBookByIdBorrow?idBorrow=" + idBorrow);
   }
+  getUserByBorrowId(idBorrow: number):Observable<UsersModel>{
+    return this.http.get<UsersModel>(this.urlBorrow + "getUsersByIdBorrow?idBorrow=" + idBorrow);
+  }
 
   deleteBorrowByIdBorrow(idBorrow: number):Observable<any>{
     return this.http.delete<any>(this.urlBorrow + "deleteByIdBorrow?idBorrow=" + idBorrow);
+  }
+
+  getAllBorrow():Observable<BorrowModel[]>{
+    return this.http.get<BorrowModel[]>(this.urlBorrow + "getAllBorrow");
   }
 }

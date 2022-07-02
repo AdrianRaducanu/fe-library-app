@@ -3,8 +3,11 @@
     <app-header></app-header>
     <app-menu></app-menu>
   </div>
-  <div class="login-container" *ngIf="!isLogged">
-    <app-login (newItemEvent)="toggleIsLogged($event)"></app-login>
+  <div class="app-container" *ngIf="isAdmin">
+    <app-admin></app-admin>
+  </div>
+  <div class="login-container" *ngIf="!isLogged && !isAdmin">
+    <app-login (newItemEvent)="toggleIsLogged($event)" (isAdmin)="toggleIsAdmin($event)"></app-login>
   </div>
 </div>
 

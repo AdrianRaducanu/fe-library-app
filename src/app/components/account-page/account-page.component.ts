@@ -123,7 +123,7 @@ export class AccountPageComponent implements OnInit {
         item => console.log(item)
       )
     }
-    this.refresh.emit(1);
+    this.refresh.emit(2);
   }
   removeBorrow(){
     console.log(this.userLogged.borrow.idBorrow)

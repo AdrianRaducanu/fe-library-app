@@ -1,0 +1,109 @@
+.admin-main-container{
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.admin-buttons{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  background: #413B88;
+  height: 20%;
+  .admin-button{
+    outline: none;
+    background: #F6F6F6;
+    color: #413B88;
+    border: none;
+    border-radius: 5px;
+    padding: 0.5rem 1.5rem;
+  }
+}
+.admin-content{
+  width: 100%;
+  height: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+.create-book{
+  width: 30%;
+  height: 20%;
+
+}
+.form-create{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-evenly;
+}
+.property{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 1rem;
+  input, textarea{
+    width: 60%;
+    border-radius: 5px;
+    outline: none;
+    border: 1px solid #252525;
+    padding: 0.1rem 0.3rem;
+  }
+}
+.btn-property{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  button{
+    outline: none;
+    background: #F6F6F6;
+    color: #413B88;
+    border: 1px solid #413B88;
+    border-radius: 5px;
+    padding: 0.2rem 1rem;
+
+  }
+}
+.my-grid{
+  width: 100%;
+  height: 100%;
+
+}
+.my-grid-description{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  padding-top: 1rem;
+}
+.my-grid-content{
+  overflow: scroll;
+  height: 100%;
+  width: 100%;
+  .one-content{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    background: #F6F6F6;
+    margin: 0.3rem 0;
+    p{
+      margin-right:1rem ;
+    }
+  }
+
+}
+
+.glow{
+  font-size: large;
+  font-weight: bold;
+}

@@ -11,6 +11,7 @@ import {BookDataService} from "./services/book-data.service";
 export class AppComponent implements OnInit{
   title = 'user-app';
   isLogged : boolean = false;
+  isAdmin : boolean = false;
   constructor() {}
 
   ngOnInit() {
@@ -19,6 +20,9 @@ export class AppComponent implements OnInit{
 
   toggleIsLogged(isLogged : boolean){
     this.isLogged = isLogged;
+  }
+  toggleIsAdmin(isAdmin: boolean){
+    this.isAdmin = isAdmin;
   }
 
 }

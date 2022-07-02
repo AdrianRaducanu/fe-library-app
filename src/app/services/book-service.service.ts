@@ -35,6 +35,16 @@ export class BookServiceService {
     return this.http.get<BookModel>(this.urlBook + "getRandomBook?category=" + category);
   }
 
+  saveBook(title: String, author:String, description:String, category:String, img:String):Observable<any>{
+    return this.http.post<any>(this.urlBook + "createNewBook", {
+      "title": title,
+      "author": author,
+      "avgStar": 0,
+      "description": description,
+      "category": category,
+      "image": img
+    })
+  }
 
 
 }

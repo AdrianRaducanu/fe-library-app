@@ -1,0 +1,88 @@
+<div class="admin-main-container">
+  <div class="admin-buttons">
+    <button class="admin-button create-new-book" (click)="goBook()" [ngClass]="swapPage === 1 ? 'glow' : ''">Adauga carte</button>
+    <button class="admin-button all-books" (click)="goAllBooks()" [ngClass]="swapPage === 2 ? 'glow' : ''">Vezi toate cartile</button>
+    <button class="admin-button all-users" (click)="goAllUsers()" [ngClass]="swapPage === 3 ? 'glow' : ''">Vezi toti utilizatorii</button>
+    <button class="admin-button due-date-violation" (click)="goDueDate()" [ngClass]="swapPage === 4 ? 'glow' : ''">Vezi utilizatorii care au depasit limita</button>
+  </div>
+  <div class="admin-content">
+    <div class="create-book" *ngIf="swapPage === 1">
+      <form class="form-create">
+        <div class="property">
+          <label>Titlu</label>
+          <input [(ngModel)]="title" name="title">
+        </div>
+        <div class="property">
+          <label>Autor</label>
+          <input [(ngModel)]="author" name="author">
+        </div>
+        <div class="property">
+          <label>Categorie</label>
+          <input [(ngModel)]="category" name="category">
+        </div>
+        <div class="property">
+          <label>Link Imagine</label>
+          <input [(ngModel)]="img" name="img">
+        </div>
+        <div class="property">
+          <label>Descriere</label>
+          <textarea [(ngModel)]="description" name="description"></textarea>
+        </div>
+        <div class="btn-property">
+          <button (click)="saveBook()">Adauga</button>
+        </div>
+
+      </form>
+    </div>
+    <div *ngIf="swapPage === 2" class="my-grid container">
+      <div class="my-grid-description row">
+        <h4 class="col">ID</h4>
+        <h4 class="col">Titlu</h4>
+        <h4 class="col">Autor</h4>
+        <h4 class="col-sm">Nota</h4>
+      </div>
+      <div class="my-grid-content">
+        <div class="one-content" *ngFor="let book of books">
+          <p class="col">{{book.idBook}}</p>
+          <p class="col">{{book.title}}</p>
+          <p class="col">{{book.author}}</p>
+          <p class="col-sm">{{book.avgStar}}</p>
+        </div>
+      </div>
+    </div>
+    <div *ngIf="swapPage === 3" class="my-grid container">
+      <div class="my-grid-description row">
+        <h4 class="col">Nume</h4>
+        <h4 class="col">Prenume</h4>
+        <h4 class="col">E-mail</h4>
+        <h4 class="col-sm">Telefon</h4>
+      </div>
+      <div class="my-grid-content">
+        <div class="one-content" *ngFor="let user of users">
+          <p class="col">{{user.lastName}}</p>
+          <p class="col">{{user.firstName}}</p>
+          <p class="col">{{user.email}}</p>
+          <p class="col-sm">{{user.phone}}</p>
+        </div>
+      </div>
+    </div>
+    <div *ngIf="swapPage === 4" class="my-grid container">
+      <div class="my-grid-description row">
+        <h4 class="col">Nume</h4>
+        <h4 class="col">Prenume</h4>
+        <h4 class="col">E-mail</h4>
+        <h4 class="col-sm">Telefon</h4>
+        <h4 class="col-sm">Data returnarii</h4>
+      </div>
+      <div class="my-grid-content">
+        <div class="one-content" *ngFor="let user of users; let i = index">
+          <p class="col">{{user.lastName}}</p>
+          <p class="col">{{user.firstName}}</p>
+          <p class="col">{{user.email}}</p>
+          <p class="col-sm">{{user.phone}}</p>
+          <p class="col-sm">{{borrows[i].dueDate | date}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

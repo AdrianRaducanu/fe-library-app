@@ -12,7 +12,7 @@ import {UsersModel} from "../../models/users-model.model";
 export class LoginComponent implements OnInit {
 
   @Output() newItemEvent = new EventEmitter<boolean>();
-
+  @Output() isAdmin = new EventEmitter<boolean>();
   email:String = "";
   password: String = "";
   firstName: String ="";
@@ -58,8 +58,11 @@ export class LoginComponent implements OnInit {
               console.log(this.usersData.subUser$);
             }
           );
-          this.newItemEvent.emit(true);
-
+          if(this.email === "account@admin.ro"){
+            this.isAdmin.emit(true);
+          }else {
+            this.newItemEvent.emit(true);
+          }
         }else{
           this.error = true;
         }

@@ -17,6 +17,7 @@ import { StarsComponent } from './components/shared/stars/stars.component';
 import { ReviewComponent } from './components/shared/review/review.component';
 import { LoginComponent } from './components/login/login.component';
 import { GenerateRandomComponent } from './shared/generate-random/generate-random.component';
+import { AdminComponent } from './components/admin/admin.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { GenerateRandomComponent } from './shared/generate-random/generate-rando
     StarsComponent,
     ReviewComponent,
     LoginComponent,
-    GenerateRandomComponent
+    GenerateRandomComponent,
+    AdminComponent
   ],
   imports: [
     BrowserModule,
